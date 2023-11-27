@@ -2,6 +2,7 @@ export default class {
   constructor(id) {
     this.id = id;
     this.localStorageKey = 'todo-app';
+    this.activeProject = null;
   }
 
   getConfig(key) {

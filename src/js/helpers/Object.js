@@ -16,4 +16,12 @@ export default class {
     });
     return details;
   }
+
+  static getObjectDetailsArray(arr) {
+    if (!arr || arr.length === 0) return [];
+
+    let objectDetailsArray = arr.map(function (obj) {
+      return getObjectDetails(obj);
+    });
+  }
 }

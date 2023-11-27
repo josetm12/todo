@@ -14,6 +14,10 @@ export default class {
     return this.childListIds;
   }
 
+  addChildListId(id) {
+    this.childListIds.push(id);
+  }
+
   removeChildListId(id) {
     let newListIds = this.childListIds.filter((id) => list.id !== id);
     this.childListIds = newListIds;

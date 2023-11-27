@@ -24,35 +24,13 @@ export default class {
     });
   }
 
-  /**
-   * --If no arguments are given, all the todo itemss under the list are returned
-   * --For only today items, pass 'dueBy' as param and 'today' or today's date as value
-   **/
-  getTodos(param, value) {
-    const getAll = arguments.length === 0 || !param;
-
-    if (getAll) return this.todoList;
-
-    return this.todoList.filter((todo) => {
-      return todo[param] === value;
-    });
+  addTodoId(todoId) {
+    this.todoList.push(todoId);
   }
 
-  addTodo(todo) {
-    let newTodo = new todoObj({
-      ...todo,
-      ...{ listId: this.id, projectId: this.projectId },
-    });
-    this.todoList.push(newTodo);
-  }
-
-  removeTodo(id, todoToDel) {
+  removeTodoId(id) {
     this.todoList = this.todoList.filter(function (todo) {
-      if (todoToDel && todoToDel.id) {
-        return todo.id !== todoToDel.id;
-      } else {
-        return todo.id !== id;
-      }
+      return todo.id !== id;
     });
   }
 

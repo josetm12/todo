@@ -1,4 +1,5 @@
 import project from '../../modules/project/project';
+import { allProjects } from '../../util/storage';
 
 import OBJ_HELPER_FNS from '../../helpers/Object';
 import CONFIG from '../../util/config';
@@ -23,12 +24,13 @@ const writeToStorage = (projectObj) => {
   if (!appStorageKey)
     throw new Error('App Storage Master Key not defined in config.');
 
-  let projectList = localStorage.getObject(appStorageKey) || [];
+  allProjects.push(projectObj);
+  localStorage.setObject(
+    `${appStorageKey}-projects`,
+    OBJ_HELPER_FNS.getObjectDetailsArray(allProjects)
+  );
 
-  projectList.push(OBJ_HELPER_FNS.getObjectDetails(projectObj));
-  localStorage.setObject(appStorageKey, projectList);
-
-  return projectList;
+  return projectObj;
 };
 
 export default createProject;
