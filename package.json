@@ -1,0 +1,37 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "A simple todo app built with vanilla JS, HTML &amp; CSS. Base commit will contain MVP. Future commits will link it to a backend server built with Node.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "start": "webpack serve --open",
+    "deployUpdate": "git subtree push --prefix dist origin gh-pages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josetm12/todo.git"
+  },
+  "keywords": [
+    "todo"
+  ],
+  "author": "jtm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josetm12/todo/issues"
+  },
+  "homepage": "https://github.com/josetm12/todo#readme",
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "html-webpack-plugin": "^5.5.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
+    "webpack-merge": "^5.10.0"
+  },
+  "dependencies": {
+    "date-fns": "^2.30.0"
+  }
+}
